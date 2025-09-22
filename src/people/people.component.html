@@ -1,6 +1,6 @@
 <ul class="people">
   <li *ngFor="let person of people">
     <div>{{person}}</div>
-    <button (click)="onFavourite(person)">Favourite</button>
+    <button (click)="favouritePressed(person)">(Un)Favourite</button>
   </li>
 </ul>

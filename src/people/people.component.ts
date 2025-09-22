@@ -12,9 +12,16 @@ import {NgForOf} from "@angular/common";
 })
 export class PeopleComponent {
   @Output() public newFavourite = new EventEmitter<string>();
-  @Input("people") people : string[] = [];
+  @Output() public unFavourite = new EventEmitter<string>();
+  @Input("people") people: string[] = [];
+  @Input("favourites") favourites: string[] = [];
 
-  onFavourite(person: string) {
-    this.newFavourite.emit(person);
+  favouritePressed(person: string) {
+    if (this.favourites.indexOf(person) < 0) {
+      this.newFavourite.emit(person);
+    }
+    else {
+      this.unFavourite.emit(person);
+    }
   }
 }
