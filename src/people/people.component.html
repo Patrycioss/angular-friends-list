@@ -1,0 +1,6 @@
+<ul class="people">
+  <li *ngFor="let person of people">
+    <div>{{person}}</div>
+    <button (click)="onFavourite(person)">Favourite</button>
+  </li>
+</ul>

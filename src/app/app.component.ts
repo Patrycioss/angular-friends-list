@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   newFriend: string | null = null;
-  favorite: string | null = null;
+  favourite: string | null = null;
 
   people: string[] = ['lewis', 'jules', 'ed', 'nathan', 'dave', 'nigel'];
-
+  setFavourite(favourite : string) {
+    this.favourite = favourite;
+  }
   addFriend() {
     if (!this.newFriend) {
       return;
